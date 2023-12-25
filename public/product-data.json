@@ -1,0 +1,39 @@
+[
+  {
+    "id": 1,
+    "name": "Drumstick",
+    "price": 300,
+    "currency": "LKR",
+    "image": "Drumstick.png"
+  },
+  {
+    "id": 2,
+    "name": "Submarine",
+    "price": 250,
+    "currency": "LKR",
+    "image": "MiniSubmarine.png"
+  },
+  {
+    "id": 3,
+    "name": "Burger",
+    "price": 300,
+    "currency": "LKR",
+    "image": "buger2.png"
+  },
+
+  {
+    "id": 4,
+    "name": "Fries",
+    "price": 750,
+    "currency": "LKR",
+    "image": "Fries.png"
+  },
+
+  {
+    "id": 5,
+    "name": "Pasta",
+    "price": 700,
+    "currency": "LKR",
+    "image": "Pasta.png"
+  }
+]
