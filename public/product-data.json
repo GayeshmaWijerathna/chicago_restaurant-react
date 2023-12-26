@@ -35,5 +35,33 @@
     "price": 700,
     "currency": "LKR",
     "image": "Pasta.png"
-  }
+  },
+  {
+    "id": 6,
+    "name": "Combo",
+    "price": 1450,
+    "currency": "LKR",
+    "image": "Chicago Combo.png"
+  },
+  {
+  "id": 7,
+  "name": "Wings",
+  "price": 160,
+  "currency": "LKR",
+  "image": "Wings.png"
+},
+  {
+  "id": 8,
+  "name": "Pizza",
+  "price": 1390,
+  "currency": "LKR",
+  "image": "Pizza2.png"
+},
+  {
+  "id": 9,
+  "name": "Burger L",
+  "price": 660,
+  "currency": "LKR",
+  "image": "Burger bun.png"
+}
 ]
