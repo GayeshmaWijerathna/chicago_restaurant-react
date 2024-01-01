@@ -1,4 +1,5 @@
 import {Component} from "react";
+import {ModifyCart} from "../ModifyCart/ModifyCart";
 
 interface ProductProps {
     data: any
@@ -24,7 +25,7 @@ export class Product extends Component<ProductProps, ProductState> {
             <>
 <div className=" w-56 h-50 border-black border-[1px] mr-2 mb-2 justify-center items-center align-middle">
     <div className="h-36">
-        <img className="w-52 h-32 mt-5 ml-2 mr-3" src={image} alt="Menu Image"/>
+        <img className="w-52 h-32 mt-5 ml-2 mr-3 hover:scale-125 transition-transform  " src={image} alt="Menu Image"/>
     </div>
     <div className="flex justify-end">
         <div>
@@ -37,9 +38,13 @@ export class Product extends Component<ProductProps, ProductState> {
     </div>
 
     <div className="flex justify-center">
-    <button className="w-full mt-1 P-[2.5px]  hover:bg-yellow-400 cursor-pointer  bg-green-400 text-[13px]" onClick={this.addToCartOnClick}>
+        { this.state.isActive?
+            <ModifyCart data={{product:data,isAdded: this.state.isActive}}/>:
+    <button className="w-full mt-1 P-[2.5px] text-yellow-500 hover:text-black hover:bg-yellow-400 cursor-pointer bg-zinc-800 text-[13px]" onClick={this.addToCartOnClick}>
         Add to Cart
-    </button></div>
+    </button>
+        }
+    </div>
 
 </div>
 

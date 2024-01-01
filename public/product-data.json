@@ -63,5 +63,68 @@
   "price": 660,
   "currency": "LKR",
   "image": "Burger bun.png"
+},
+  {
+    "id": 11,
+    "name": "Add Meal",
+    "price": 100,
+    "currency": "LKR",
+    "image": "img.png"
+  },
+  {
+  "id": 11,
+  "name": "Add Meal",
+  "price": 100,
+  "currency": "LKR",
+  "image": "img.png"
+} ,
+  {
+  "id": 12,
+  "name": "Add Meal",
+  "price": 100,
+  "currency": "LKR",
+  "image": "img.png"
+} ,
+  {
+  "id": 13,
+  "name": "Add Meal",
+  "price": 100,
+  "currency": "LKR",
+  "image": "img.png"
+} ,
+  {
+  "id": 14,
+  "name": "Add Meal",
+  "price": 100,
+  "currency": "LKR",
+  "image": "img.png"
+} ,
+  {
+  "id": 15,
+  "name": "Add Meal",
+  "price": 100,
+  "currency": "LKR",
+  "image": "img.png"
+} ,
+  {
+  "id": 16,
+  "name": "Add Meal",
+  "price": 100,
+  "currency": "LKR",
+  "image": "img.png"
+} ,
+  {
+  "id": 17,
+  "name": "Add Meal",
+  "price": 100,
+  "currency": "LKR",
+  "image": "img.png"
+} ,
+  {
+  "id": 18,
+  "name": "Add Meal",
+  "price": 100,
+  "currency": "LKR",
+  "image": "img.png"
 }
 ]

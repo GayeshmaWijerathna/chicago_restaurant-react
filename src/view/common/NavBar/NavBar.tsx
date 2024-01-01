@@ -21,7 +21,7 @@ export class NavBar extends Component {
                         <li className="inline-block mr-2 text-[13] hover:border-b text-white hover:text-red-800">
                             <Link to="/contact">Contact</Link></li>
                     </ul>
-                    <button className="text-[20px] text-white hover:text-black bg-red-800 pl-3 pr-3 hover:bg-yellow-400 rounded-full" ><Link to="/login">Sign in</Link></button>
+                    <Link to="/login"><button className="text-[20px] mt-3 mr-3 text-white hover:text-black bg-orange-600 pl-3 pr-3 hover:bg-yellow-400 rounded-full" >Sign in</button></Link>
 
                 </div>
             </>
