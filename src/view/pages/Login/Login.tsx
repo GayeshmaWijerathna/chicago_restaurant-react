@@ -17,6 +17,9 @@ import logon from "../../../Images/Background2.jpg";
                 padding: '53px', // Add padding as needed
             };
 
+           const handleBack = () => {
+                 // Use the goBack method to navigate back
+           };
             return (
 
                 <div style={signImage}>
@@ -31,6 +34,7 @@ import logon from "../../../Images/Background2.jpg";
                             }}
                         >
                             <Avatar sx={{m: 2, bgcolor:"primary.light"}}>
+
                                 <LockOutlined/>
                             </Avatar>
                             <Typography variant="h5">Login</Typography>
@@ -57,14 +61,23 @@ import logon from "../../../Images/Background2.jpg";
 
                                 />
 
+
                                 <Button
                                     fullWidth
                                     variant="contained"
                                     sx={{mt: 3, mb: 2}}
-
                                 >
                                     Login
                                 </Button>
+
+                                <Link to="/">  <Button
+                                    fullWidth
+                                    variant="outlined"
+                                    sx={{ mt: 2, mb: 1 }}
+                                >
+                                   Back
+                                </Button></Link>
+
                                 <Grid container justifyContent={"flex-end"} className="mb-2">
                                     <Grid item>
                                         <Link to="/register">Don't have an account? <span
