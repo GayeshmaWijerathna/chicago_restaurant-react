@@ -11,6 +11,7 @@ import {
     Grid,
 } from '@mui/material';
 import LockOutlined from '@mui/icons-material/LockOutlined';
+import {Link} from "react-router-dom";
 
 
 export class Register extends Component {
@@ -77,20 +78,22 @@ export class Register extends Component {
                         >Register
                         </Button>
 
-                        <Button
-                            fullWidth
-                            variant="outlined"
-                            sx={{mt: 2, mb: 1}}
-                            // onClick={handleBack}
-                        >
-                            Back
-                        </Button>
+                        <Link to="/">
+                            <Button
+                                fullWidth
+                                variant="outlined"
+                                sx={{mt: 2, mb: 1}}
+                                // onClick={handleBack}
+                            >
+                                Back
+                            </Button> </Link>
                         <Grid container justifyContent={'flex-end'}>
                             <Grid item>
 
                                 Already have an account?{' '}
-                                <span className="text-blue-500 hover:text-blue-900 cursor-pointer"> Login</span>
-
+                                <Link to="/login"> <span
+                                    className="text-blue-500 hover:text-blue-900 cursor-pointer"> Login </span>
+                                </Link>
                             </Grid>
                         </Grid>
                     </Box>

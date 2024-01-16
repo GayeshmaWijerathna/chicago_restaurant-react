@@ -1,12 +1,14 @@
 import {Product} from "../../common/Products/Product";
 import React, {Component} from "react";
+import axios from "axios";
 
 export class Menu extends Component {
-    constructor(props: Readonly<{ }>) {
+    private api: any;
+    constructor(props:{} | Readonly<{}>) {
         super(props);
+        this.api=axios.create({baseURL:`http://localhost:4000`})
         this.state={ data:[] }
     }
-
 
     componentDidMount() {
         this.fetchData();
@@ -14,9 +16,16 @@ export class Menu extends Component {
 
     fetchData= async ()=>{
         try {
-            const response =await fetch("./product-data.json");
-            const jsonData =await response.json();
-            this.setState({data:jsonData})
+
+            // const response =await fetch("./product-data.json");
+            // const jsonData =await response.json();
+
+            this.api.get("products/all").then((res:{data:any})=>{
+                const jsonData=res.data;
+                this.setState({data: jsonData})
+            }).catch((error:any)=>{
+                console.error('Error Axios data',error)
+            });
         }catch (error){
             console.log("Fetching Data Not Found!!",error)
         }
@@ -41,7 +50,7 @@ export class Menu extends Component {
                         ))
                     }
                 </div>
-                    </div>
+               </div>
             </div>
             </>
         );
