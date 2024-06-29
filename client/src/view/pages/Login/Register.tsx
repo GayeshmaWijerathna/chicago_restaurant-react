@@ -84,8 +84,7 @@ export class Register extends Component {
                                 variant="outlined"
                                 sx={{mt: 2, mb: 1}}
                                 // onClick={handleBack}
-                            >
-                                Back
+                            > Back
                             </Button> </Link>
                         <Grid container justifyContent={'flex-end'}>
                             <Grid item>

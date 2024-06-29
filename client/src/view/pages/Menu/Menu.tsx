@@ -20,7 +20,7 @@ export class Menu extends Component {
             // const response =await fetch("./product-data.json");
             // const jsonData =await response.json();
 
-            this.api.get("products/all").then((res:{data:any})=>{
+            this.api.get("/products").then((res:{data:any})=>{
                 const jsonData=res.data;
                 this.setState({data: jsonData})
             }).catch((error:any)=>{

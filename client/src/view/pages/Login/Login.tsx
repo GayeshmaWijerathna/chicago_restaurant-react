@@ -1,94 +1,81 @@
-import {Link} from "react-router-dom";
-import {Avatar, Box, Button, Container, CssBaseline, Grid, TextField, Typography} from "@mui/material";
-import {LockOutlined} from "@mui/icons-material";
-import logon from "../../../Images/Background2.jpg";
-import {Component} from "react";
-
-
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 export class Login extends Component {
+    state = {
+        username: '',
+        password: '',
+        error: ''
+    };
 
+    // @ts-ignore
+    handleInputChange = (e) => {
+        this.setState({
+            [e.target.name]: e.target.value
+        });
+    }
+
+    // @ts-ignore
+    handleSubmit = (e) => {
+        e.preventDefault();
+
+        const { username, password } = this.state;
+
+        if (username === 'admin' && password === 'admin12') {
+            // Redirect to admin page
+            // @ts-ignore
+            window.location.href = '/admin';
+        } else {
+            this.setState({ error: 'Invalid credentials' });
+        }
+    }
 
     render() {
 
-
-        const signImage = {
-            backgroundImage: `url(${logon})`,
-            backgroundSize: 'cover',
-            padding: '53px', // Add padding as needed
-        };
-
-
+        // @ts-ignore
         return (
-
-            <div style={signImage}>
-                <Container maxWidth="xs" className="bg-white bg-opacity-80 bg-rounded-l mb-20">
-                    <CssBaseline/>
-                    <Box
-                        sx={{
-                            mt: 9,
-                            display: "flex",
-                            flexDirection: "column",
-                            alignItems: "center",
-                        }}
-                    >
-                        <Avatar sx={{m: 2, bgcolor: "primary.light"}}>
-
-                            <LockOutlined/>
-                        </Avatar>
-                        <Typography variant="h5">Login</Typography>
-                        <Box sx={{mt: 1}}>
-                            <TextField
-                                margin="normal"
+            <div className="flex flex-wrap h-screen justify-center items-center bg-cover bg-center bg-no-repeat">
+                <div className="h-auto mt-4 mb-4 p-8 mx-auto border-white border rounded-2xl bg-gray-800 bg-opacity-50 w-full max-w-md">
+                    <h2 className="pt-2 pb-2 text-3xl underline decoration-2 text-white mb-9 text-center">Log In</h2>
+                    {this.state.error && <p className="text-red-500 text-center">{this.state.error}</p>}
+                    <form onSubmit={this.handleSubmit} className="space-y-6 font-serif">
+                        <div>
+                            <label className="block text-sm font-bold text-white mb-1">User Name:</label>
+                            <input
+                                name="username"
+                                className="w-full p-2 border border-green-200 rounded-md focus:outline-none focus:ring-2 focus:ring-green-400"
+                                type="text"
                                 required
-                                fullWidth
-                                id="email"
-                                label="Email Address"
-                                name="email"
-                                autoFocus
-
+                                onChange={this.handleInputChange}
                             />
-
-                            <TextField
-                                margin="normal"
-                                required
-                                fullWidth
-                                id="password"
+                        </div>
+                        <div>
+                            <label className="block text-sm font-bold text-white mb-1">Password:</label>
+                            <input
                                 name="password"
-                                label="Password"
+                                className="w-full p-2 border border-green-200 rounded-md focus:outline-none focus:ring-2 focus:ring-green-400"
                                 type="password"
-
+                                required
+                                onChange={this.handleInputChange}
                             />
-
-
-                            <Button
-                                fullWidth
-                                variant="contained"
-                                sx={{mt: 3, mb: 2}}
-                            >
-                                Login
-                            </Button>
-
-                            <Link to="/"> <Button
-                                fullWidth
-                                variant="outlined"
-                                sx={{mt: 2, mb: 1}}
-                            >
-                                Back
-                            </Button></Link>
-
-                            <Grid container justifyContent={"flex-end"} className="mb-2">
-                                <Grid item>
-                                    <Link to="/register">Don't have an account? <span
-                                        className="text-blue-500 hover:text-blue-900 ">Register</span></Link>
-                                </Grid>
-                            </Grid>
-                        </Box>
-                    </Box>
-                </Container>
+                        </div>
+                        <div>
+                            <button type="submit" className="w-full bg-secondary text-[15px] p-[10px] rounded-3xl hover:bg-green-500 text-white font-bold">
+                                Log In
+                            </button>
+                        </div>
+                        <div className="pt-3 text-center">
+                            <Link className="text-white flex items-center justify-center" to="/">
+                                <FontAwesomeIcon icon={faArrowLeft} className="mr-2" />
+                                Back to Home
+                            </Link>
+                        </div>
+                    </form>
+                </div>
             </div>
-
-
         );
     }
-
 }
+
+export default Login;

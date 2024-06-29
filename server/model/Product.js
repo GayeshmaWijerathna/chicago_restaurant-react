@@ -1,31 +1,30 @@
 const mongoose = require('mongoose');
-const {model}= require("mongoose");
+const {Schema} = mongoose;
 
-
-const ProductModel = mongoose.Schema({
-   "id":{
+const ProductModel = new Schema({
+   id:{
        require:true,
        type:Number,
        unique:true,
        index:true
    } ,
 
-    "name":{
+    name:{
         require:true,
         type:String
     },
 
-    "price":{
+    price:{
        require:true,
         type:Number
     },
 
-    "currency":{
+    currency:{
        require:true,
         type:String
     },
 
-    "image":{
+    image:{
        require:true,
         type:String
     }
